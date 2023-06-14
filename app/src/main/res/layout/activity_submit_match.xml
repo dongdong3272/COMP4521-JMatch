@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/submitMatchLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    tools:context=".SubmitMatchActivity">
+
+    <Button
+        android:id="@+id/getMatchResultBtn"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#000000"
+        android:onClick="fireMatch"
+        android:text="Get Matching Result"
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/backgroundBox2"
+        android:layout_width="340dp"
+        android:layout_height="470dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="#D9D9D9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startMatchText" />
+
+    <TextView
+        android:id="@+id/startMatchText"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Start a Match"
+        android:textColor="#000000"
+        android:textSize="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/titleInput"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/rounded_input"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Title"
+        android:inputType="text"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundBox2"
+        app:layout_constraintStart_toStartOf="@+id/backgroundBox2"
+        app:layout_constraintTop_toTopOf="@+id/backgroundBox2" />
+
+    <EditText
+        android:id="@+id/fileInput"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/left_rounded"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center_vertical"
+        android:hint="File Path"
+        android:inputType="none"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintStart_toStartOf="@+id/backgroundBox2"
+        app:layout_constraintTop_toBottomOf="@+id/titleInput" />
+
+    <Button
+        android:id="@+id/uploadBtn"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/right_rounded"
+        android:onClick="uploadPDF"
+        android:text="Upload PDF"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundBox2"
+        app:layout_constraintTop_toBottomOf="@+id/titleInput" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundBox2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/backgroundBox2"
+        app:layout_constraintTop_toBottomOf="@+id/fileInput">
+
+        <EditText
+            android:id="@+id/textInput"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:gravity="bottom"
+            android:hint="Please paste your text here..."
+            android:inputType="text|textMultiLine"
+            android:maxWidth="300dp"
+            android:minHeight="250dp" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/orText"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Or"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fileInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
